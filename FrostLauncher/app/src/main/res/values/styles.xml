@@ -1,0 +1,8 @@
+<resources>
+    <color name="frost_bg">#0B1026</color>
+
+    <style name="Theme.Frost" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/frost_bg</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>
