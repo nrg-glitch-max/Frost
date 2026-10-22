@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: FrostLauncher
     steps:
       - uses: actions/checkout@v4
 
@@ -17,6 +20,8 @@ jobs:
           java-version: 17
 
       - uses: gradle/actions/setup-gradle@v4
+        with:
+          build-root-directory: FrostLauncher
 
       - name: Build debug APK
         run: chmod +x gradlew && ./gradlew assembleDebug
@@ -24,4 +29,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: FrostLauncher-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: FrostLauncher/app/build/outputs/apk/debug/app-debug.apk
